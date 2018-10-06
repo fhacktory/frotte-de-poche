@@ -1,0 +1,36 @@
+{
+  "name": "francuss-node-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/server.js",
+    "lint": "eslint src",
+    "test": "NODE_ENV=test mocha --compilers js:babel-register --reporter dot src/**/*.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "engine": "node >= 6.7.0",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-es2015-destructuring": "^6.19.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^4.1.0",
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}

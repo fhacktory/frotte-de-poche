@@ -1,0 +1,28 @@
+{
+    "extends": "airbnb-base",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "plugins": ["babel"],
+    "rules": {
+        "generator-star-spacing": 0,
+        "babel/generator-star-spacing": 1,
+        "arrow-parens": 0,
+        "babel/arrow-parens": 2,
+        "no-underscore-dangle": 0,
+        "import/no-extraneous-dependencies": 0
+    },
+    "globals": {
+        "it": true,
+        "describe": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "after": true,
+        "before": true
+    }
+}
