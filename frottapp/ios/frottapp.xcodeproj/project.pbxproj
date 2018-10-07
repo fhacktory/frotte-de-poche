@@ -38,6 +38,19 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		F4FAC1AE216985D700DF103F /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FAC1A2216985D700DF103F /* ProtocolBuffers.framework */; };
+		F4FAC1AF216985D700DF103F /* ReactNearbyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1A3216985D700DF103F /* ReactNearbyProtocol.swift */; };
+		F4FAC1B0216985D700DF103F /* TransportHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1A4216985D700DF103F /* TransportHandler.swift */; };
+		F4FAC1B1216985D700DF103F /* MessageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1A5216985D700DF103F /* MessageDecoder.swift */; };
+		F4FAC1B2216985D700DF103F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1A6216985D700DF103F /* NetworkManager.swift */; };
+		F4FAC1B3216985D700DF103F /* Underdark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FAC1A7216985D700DF103F /* Underdark.framework */; };
+		F4FAC1B4216985D700DF103F /* MessageEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1A8216985D700DF103F /* MessageEncoder.swift */; };
+		F4FAC1B5216985D700DF103F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1A9216985D700DF103F /* User.swift */; };
+		F4FAC1B6216985D700DF103F /* NetworkCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1AA216985D700DF103F /* NetworkCommunicator.swift */; };
+		F4FAC1B7216985D700DF103F /* ParseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1AC216985D700DF103F /* ParseExtensions.swift */; };
+		F4FAC1B8216985D700DF103F /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FAC1AD216985D700DF103F /* NetworkManager.m */; };
+		F4FAC1BB216986E800DF103F /* ProtocolBuffers.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4FAC1A2216985D700DF103F /* ProtocolBuffers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4FAC1BC216986EA00DF103F /* Underdark.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4FAC1A7216985D700DF103F /* Underdark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +329,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F4FAC1B9216986B700DF103F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4FAC1BC216986EA00DF103F /* Underdark.framework in CopyFiles */,
+				F4FAC1BB216986E800DF103F /* ProtocolBuffers.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
@@ -343,6 +370,18 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		F4FAC1A2216985D700DF103F /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/ProtocolBuffers.framework"; sourceTree = "<group>"; };
+		F4FAC1A3216985D700DF103F /* ReactNearbyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReactNearbyProtocol.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/ReactNearbyProtocol.swift"; sourceTree = "<group>"; };
+		F4FAC1A4216985D700DF103F /* TransportHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportHandler.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/TransportHandler.swift"; sourceTree = "<group>"; };
+		F4FAC1A5216985D700DF103F /* MessageDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageDecoder.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/MessageDecoder.swift"; sourceTree = "<group>"; };
+		F4FAC1A6216985D700DF103F /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/NetworkManager.swift"; sourceTree = "<group>"; };
+		F4FAC1A7216985D700DF103F /* Underdark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Underdark.framework; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/Underdark.framework"; sourceTree = "<group>"; };
+		F4FAC1A8216985D700DF103F /* MessageEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageEncoder.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/MessageEncoder.swift"; sourceTree = "<group>"; };
+		F4FAC1A9216985D700DF103F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/User.swift"; sourceTree = "<group>"; };
+		F4FAC1AA216985D700DF103F /* NetworkCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkCommunicator.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/NetworkCommunicator.swift"; sourceTree = "<group>"; };
+		F4FAC1AB216985D700DF103F /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bridge.h; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/Bridge.h"; sourceTree = "<group>"; };
+		F4FAC1AC216985D700DF103F /* ParseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParseExtensions.swift; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/ParseExtensions.swift"; sourceTree = "<group>"; };
+		F4FAC1AD216985D700DF103F /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = "../../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/NetworkManager.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +409,8 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				F4FAC1AE216985D700DF103F /* ProtocolBuffers.framework in Frameworks */,
+				F4FAC1B3216985D700DF103F /* Underdark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +559,18 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4FAC1AB216985D700DF103F /* Bridge.h */,
+				F4FAC1A5216985D700DF103F /* MessageDecoder.swift */,
+				F4FAC1A8216985D700DF103F /* MessageEncoder.swift */,
+				F4FAC1AA216985D700DF103F /* NetworkCommunicator.swift */,
+				F4FAC1AD216985D700DF103F /* NetworkManager.m */,
+				F4FAC1A6216985D700DF103F /* NetworkManager.swift */,
+				F4FAC1AC216985D700DF103F /* ParseExtensions.swift */,
+				F4FAC1A2216985D700DF103F /* ProtocolBuffers.framework */,
+				F4FAC1A3216985D700DF103F /* ReactNearbyProtocol.swift */,
+				F4FAC1A4216985D700DF103F /* TransportHandler.swift */,
+				F4FAC1A7216985D700DF103F /* Underdark.framework */,
+				F4FAC1A9216985D700DF103F /* User.swift */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
@@ -632,6 +685,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				F4FAC1B9216986B700DF103F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -693,6 +747,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = SYY2QHTF99;
+						LastSwiftMigration = 1000;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1085,7 +1140,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1116,8 +1171,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4FAC1B2216985D700DF103F /* NetworkManager.swift in Sources */,
+				F4FAC1B0216985D700DF103F /* TransportHandler.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				F4FAC1B8216985D700DF103F /* NetworkManager.m in Sources */,
+				F4FAC1B1216985D700DF103F /* MessageDecoder.swift in Sources */,
+				F4FAC1B5216985D700DF103F /* User.swift in Sources */,
+				F4FAC1B7216985D700DF103F /* ParseExtensions.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				F4FAC1B4216985D700DF103F /* MessageEncoder.swift in Sources */,
+				F4FAC1AF216985D700DF103F /* ReactNearbyProtocol.swift in Sources */,
+				F4FAC1B6216985D700DF103F /* NetworkCommunicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,6 +1233,7 @@
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1190,6 +1255,7 @@
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = frottappTests/Info.plist;
@@ -1209,9 +1275,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = SYY2QHTF99;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/**";
 				INFOPLIST_FILE = frottapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1221,6 +1289,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = frottapp;
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/Bridge.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1229,8 +1300,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYY2QHTF99;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/**";
 				INFOPLIST_FILE = frottapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1240,6 +1313,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = frottapp;
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/../node_modules/react-native-bluetooth-cross-platform/ios/react-native-bluetooth-cross-platform/Bridge.h";
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

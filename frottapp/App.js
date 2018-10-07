@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import BluetoothCP from "react-native-bluetooth-cross-platform"
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,13 +18,128 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+
+
+
 export default class App extends Component<Props> {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      connectedDevice:{},
+      connected: false,
+      responseOther: null,
+      ownMessage:null
+    }
+
+    this.sendToServer = this.sendToServer.bind(this)
+    this.handleTouchButton = this.handleTouchButton.bind(this)
+  }
+
+  sendToServer(data){
+    const {responseOther, ownMessage} = data
+    console.log('sendtoserver', data)
+    alert('LOL')
+  }
+
+  handleTouchButton(option){
+    BluetoothCP.sendMessage(option, this.state.connectedDevice.id)
+    this.setState({ownMessage:option})
+    if(this.state.responseOther){
+      this.sendToServer({responseOther:this.state.responseOther, ownMessage: option})
+      this.setState({responseOther: null, ownMessage: null,connectedDevice:{} })
+    }
+  }
+
+  componentDidMount(){
+    BluetoothCP.advertise()
+    BluetoothCP.browse()
+
+
+
+    BluetoothCP.addPeerDetectedListener((user)=>{
+      const {id, name} = user
+      BluetoothCP.inviteUser(id)
+      this.setState({connectedDevice:{id, name}, connected:true})
+    })
+    BluetoothCP.addPeerLostListener((user)=>{
+      callback(user, 'addPeerLostListener')
+      this.setState({connected: false,connectedDevice:{}, responseOther:null, ownMessage:null })
+    })
+
+    BluetoothCP.addReceivedMessageListener((user)=>{
+      //alert('message'+JSON.stringify(user))
+      const {message} = user
+
+      console.log('addReceivedMessageListener', message)
+
+      if(this.state.ownMessage){
+        this.sendToServer({ownMessage: this.state.ownMessage, responseOther:message})
+        this.setState({responseOther: null, ownMessage: null,connectedDevice:{} })
+      }
+      callback(user, 'addReceivedMessageListener')
+    })
+    BluetoothCP.addInviteListener((user)=>{
+      //BluetoothCP.acceptInvitation()
+      callback(user, 'addInviteListener')
+    })
+    BluetoothCP.addConnectedListener((user)=>{
+      callback(user, 'addConnectedListener')
+      this.setState({connected: true})
+    })
+
+    function callback(user, type) {
+      // do stuff
+      console.log('check',type, user  )
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.instructions}>Connected : {JSON.stringify(this.state.connected)}</Text>
+
+        <Text style={styles.instructions}>You are connected to {this.state.connectedDevice.name}</Text>
+        <Text style={styles.instructions}>You have to choose between rock paper or scissor</Text>
+
+        <TouchableOpacity style={{padding:20}} onPress={()=>{
+          this.handleTouchButton("ROCK")
+        }}><Text >ROCK</Text></TouchableOpacity>
+
+        <TouchableOpacity style={{padding:20}} onPress={()=>{
+          this.handleTouchButton("PAPER")
+        }}><Text >PAPER</Text></TouchableOpacity>
+
+        <TouchableOpacity style={{padding:20}} onPress={()=>{
+          this.handleTouchButton("SCISSOR")
+        }}><Text >SCISSOR</Text></TouchableOpacity>
+
+
+
+
+        <Text>Result</Text>
+        {
+          this.state.ownMessage && this.state.responseOther && this.state.ownMessage === this.state.responseOther && <Text>DRAW</Text>
+        }
+
+        {
+          this.state.ownMessage && this.state.responseOther && this.state.ownMessage === 'PAPER' &&  this.state.responseOther === 'ROCK' && <Text>WIN</Text>
+        }
+
+        {
+          this.state.ownMessage && this.state.responseOther && this.state.ownMessage === 'PAPER' &&  this.state.responseOther === 'SCISSOR' && <Text>LOSE</Text>
+        }
+        {
+          this.state.ownMessage && this.state.responseOther && this.state.ownMessage === 'ROCK' &&  this.state.responseOther === 'PAPER' && <Text>LOSE</Text>
+        }
+        {
+          this.state.ownMessage && this.state.responseOther && this.state.ownMessage === 'ROCK' &&  this.state.responseOther === 'SCISSOR' && <Text>WIN</Text>
+        }
+        {
+          this.state.ownMessage && this.state.responseOther && this.state.ownMessage === 'SCISSOR' &&  this.state.responseOther === 'PAPER' && <Text>WIN</Text>
+        }
+        {
+          this.state.ownMessage && this.state.responseOther && this.state.ownMessage === 'SCISSOR' &&  this.state.responseOther === 'ROCK' && <Text>LOSE</Text>
+        }
       </View>
     );
   }
